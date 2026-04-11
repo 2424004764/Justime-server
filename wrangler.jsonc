@@ -33,10 +33,7 @@
 	 */
 	// "vars": {  "MY_VARIABLE": "production_value" }
 	// 仅用于生成 TS 类型，实际值通过 `wrangler secret put` 设置会覆盖这里
-	"vars": {
-		"WX_APPID": "",
-		"WX_SECRET": ""
-	},
+	"vars": {},
 	/**
 	 * D1 Database
 	 * https://developers.cloudflare.com/d1/

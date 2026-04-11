@@ -7,7 +7,8 @@
     "dev": "wrangler dev",
     "start": "wrangler dev",
     "test": "vitest",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "export-openapi": "node scripts/export-openapi.mjs"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.12.4",
@@ -17,6 +18,9 @@
     "wrangler": "^4.80.0"
   },
   "dependencies": {
-    "hono": "^4.12.12"
+    "@hono/zod-openapi": "^1.2.4",
+    "@scalar/hono-api-reference": "^0.10.7",
+    "hono": "^4.12.12",
+    "zod": "^4.3.6"
   }
 }

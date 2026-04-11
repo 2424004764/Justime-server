@@ -46,6 +46,12 @@ src/
 
 | 命令 | 说明 |
 |------|------|
-| `npm run dev` | 本地开发（wrangler dev） |
-| `npm run deploy` | 部署到 Cloudflare |
-| `npm run cf-typegen` | 根据 wrangler.jsonc 生成 TS 类型 |
+| `pnpm dev` | 本地开发（wrangler dev） |
+| `pnpm deploy` | 部署到 Cloudflare |
+| `pnpm cf-typegen` | 根据 wrangler.jsonc 生成 TS 类型 |
+
+## 包管理
+
+- 统一使用 pnpm，禁止使用 npm 或 yarn
+- 安装依赖：`pnpm add <package>`
+- 安装开发依赖：`pnpm add -D <package>`
