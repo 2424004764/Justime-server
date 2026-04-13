@@ -53,7 +53,7 @@ router.openapi(listPresetsRoute, PresetController.listPresets)
 router.openapi(listGroupsRoute, PresetController.listGroups)
 router.openapi(listGroupRecordsRoute, PresetController.listGroupRecords)
 
-// Protected routes - tags
+// Protected routes - tags 
 router.use('/tags', authMiddleware)
 router.openapi(getTagsRoute, TagController.getSuggestions)
 
