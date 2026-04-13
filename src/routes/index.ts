@@ -27,6 +27,10 @@ import { TagController } from '../controllers/tag.controller'
 import { reverseGeocodeRoute } from './location.route'
 import { LocationController } from '../controllers/location.controller'
 
+import { getStatsRoute } from './stats.route'
+import { StatsService } from '../services/stats.service'
+import type { RouteHandler } from '@hono/zod-openapi'
+
 const router = new OpenAPIHono<AppEnv>()
 
 // Public routes
@@ -56,5 +60,13 @@ router.openapi(getTagsRoute, TagController.getSuggestions)
 // Protected routes - location
 router.use('/location/*', authMiddleware)
 router.openapi(reverseGeocodeRoute, LocationController.reverseGeocode)
+
+// Protected routes - stats
+router.use('/stats', authMiddleware)
+router.openapi(getStatsRoute, (async (c) => {
+  const userId = c.get('userId')
+  const stats = await StatsService.get(userId, c.env)
+  return c.json({ code: 0, msg: 'ok', data: stats }, 200)
+}) as RouteHandler<typeof getStatsRoute, AppEnv>)
 
 export default router
