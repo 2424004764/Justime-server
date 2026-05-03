@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "hidden-mountain-0ece",
+	"name": "justime",
 	"main": "src/index.ts",
 	"compatibility_date": "2026-04-07",
 	"observability": {
