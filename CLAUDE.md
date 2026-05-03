@@ -1,3 +1,13 @@
+# 项目背景
+
+## 迁移前提
+
+- D:\dev\uniapp\yifangyunzhi 是要修改的小程序，将所有云函数调用由原来的uniapp云服务改为调用部署在Cloudflare的workers的api服务。
+
+- D:\dev\cloudflare\workers\yifangyunzhi 这个目录的作用是存放Cloudflare的workers的api，所有D:\dev\uniapp\yifangyunzhi 下的云函数的api都要移动到这个目录下，本地运行的服务为：http://127.0.0.1:8787
+
+- 而D:\dev\cloudflare\workers\justime这个目录使用来做参考的，这个目录是Cloudflare的workers实际部署在运行的服务
+
 # 项目简介
 
 这是一个运行在 **Cloudflare Workers** 上的 API 服务，使用 **Hono** 框架构建。
